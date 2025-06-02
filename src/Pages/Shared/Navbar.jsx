@@ -16,9 +16,17 @@ const Navbar = () => {
     }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {/* this is for applier */}
         {
             user && <>
             <li><NavLink to='/myapplications'>My Applications</NavLink></li>
+            </>
+        }
+        {/* this is for recruiter */}
+        {
+            user && <>
+            <li><NavLink to='/addJob'>Add Job</NavLink></li>
+            <li><NavLink to='/myPostedJobs'>My Posted Job</NavLink></li>
             </>
         }
 
