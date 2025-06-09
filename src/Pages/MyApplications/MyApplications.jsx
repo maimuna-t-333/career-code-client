@@ -7,15 +7,20 @@ import { myApplicationsPromise } from '../../api/applicationApi';
 
 
 const MyApplications = () => {
-    const {user}=useAuth()
+    const { user } = useAuth()
+
+    console.log('token access token', user.accessToken)
     return (
         <div>
             <ApplicationStats></ApplicationStats>
             <Suspense fallback={'loading your application'}>
                 <ApplicationList
-                myApplicationsPromise={myApplicationsPromise(user.email)}
+                myApplicationsPromise={myApplicationsPromise(user.email,user.accessToken)}
+               
                 ></ApplicationList>
             </Suspense>
+            
+
         </div>
     );
 };
